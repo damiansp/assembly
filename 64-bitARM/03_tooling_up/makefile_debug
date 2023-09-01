@@ -1,0 +1,15 @@
+# run as
+# make DEBGUG=1
+OBJS = HelloWorld.o
+
+ifdef DEBUG
+DEBUGFLGS = -g
+else
+DEBUGFLGS =
+endif
+
+%.o : %.s
+	as $(DEBUGFLGS) $< -o $@
+
+helloWorld: $(OBJS)
+	ld -o helloWorld.exe $(OBJS)
