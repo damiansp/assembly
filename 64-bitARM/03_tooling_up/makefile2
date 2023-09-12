@@ -9,6 +9,6 @@ endif
 OBJS = helloWorld.o
 
 %.o : %.s
-  $(AS) $< -o $@
+	$(AS) $< -o $@
 helloWorld: $(OBJS)
-  $(LD) -o helloWorld $(OBJS)
+	$(LD) -o helloWorld $(OBJS)
