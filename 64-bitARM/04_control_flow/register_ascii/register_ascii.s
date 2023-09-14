@@ -54,4 +54,4 @@ cont:                // end if
 
 
 .data
-hexstr: .ascii "Ox123456789ABCDEFG\n"
+hexstr: .ascii "0x123456789ABCDEFG\n"
