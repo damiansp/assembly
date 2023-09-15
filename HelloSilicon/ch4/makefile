@@ -12,10 +12,12 @@ LDFLAGS = -lSystem -syslibroot `xcrun -sdk macosx --show-sdk-path` -e _start \
 %.o: %.s
 	as $(DEBUGFLS) $< -o $@
 
-all: printdword
+all: printdword switch
 
 printdword: $(OBJS)
 	ld -o printdword $(LDFLAGS) $(OBJS)
 
+switch: switch.o
+	ld -o switch $(LDFLAGS) switch.o
 clean:
 	rm *.o printdword
