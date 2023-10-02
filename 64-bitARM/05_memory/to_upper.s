@@ -31,7 +31,7 @@ cont:
   // print hex number
   mov  x0, #1        // 1: stdout
   ldr  x1, =outstr   // str to print
-  sub  x2, x3, x1    // get len(str) by subrtracting pointers
+  sub  x2, x3, x1    // get len(str) by subtracting pointers
   mov  x8, #64       // linux write call
   svc  0             // execute
   // exit
