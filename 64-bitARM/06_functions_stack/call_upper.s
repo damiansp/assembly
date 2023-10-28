@@ -1,4 +1,4 @@
-// Convert string to uppper case by calling a function
+// Call the upper function to convert str to uppercase
 // X0-X2: params to linux functions
 // X0:    addr of instr
 // X1:    addr of outstr
