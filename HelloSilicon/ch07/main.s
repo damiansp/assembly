@@ -38,7 +38,7 @@ next_file:
 	ADRP        X2, out_err_sz@PAGE
 	ADD         X2, X2, out_err_sz@PAGEOFF
 	LDR         W2, [X2]
-	write_file	X1, outErr, X2
+	write_file	X1, out_err, X2
 	B           exit
 
 
@@ -73,6 +73,6 @@ out_file:   .asciz "upper.txt"
 buffer:	    .fill	 BUFFER_LEN + 1, 1, 0
 out_buf:	  .fill	 BUFFER_LEN + 1, 1, 0
 in_err:     .asciz "Failed to open input file.\n"
-in_err_sz:  .word  .-inpErr 
+in_err_sz:  .word  .-in_err 
 out_err:	  .asciz "Failed to open output file.\n"
-out_err_sz: .word  .-outErr
+out_err_sz: .word  .-out_err
