@@ -24,14 +24,13 @@ lubupper.a: $(LIBOBJS)
 
 libup.dylib: $(LIBOBJS) upper.e.o
 	clang -current_version 1.0 -compatibility_version 1.0 \
-		-dynamiclib	-o oibup.arm64.dylib $(LIBOBJS)
+		-dynamiclib	-o libup.arm64.dylib $(LIBOBJS)
 	clang -arch arm64e -current_version 1.0 -compatibility_version 1.0 \
 		-dynamiclib -o libup.arm64e.dylib upper.e.o
-	lip -create -output libup.A.dylib libup.arm64.dylib libup.arm64e.dylib
+	lipo -create -output libup.A.dylib libup.arm64.dylib libup.arm64e.dylib
 	mkdir -p ./lib
 	mv libup.A.dylib ./lib/
 	ln -sf ./lib/libup.A.dylib ./lib/libup.dylib
 
 clean:
-	rm -f *.o upper_test libupper.a upper_test? ./lib/lubup.dylib \
-		./lib/libup.A.dylib
+	rm -f *.o upper_test libupper.a upper_test?
