@@ -66,3 +66,20 @@ eor|eor x0, x1, x2|Bitwise XOR
 lsl|lsl x0, x1, #3|Logical shift left by 3 (multiply by 8)
 lsr|lsr x0, x1, #1|Logical shift right by 1 (unsigned divide by 2)
 asr|asr x0, x1, #2|Arithmetic shift right (preserves sign bit)
+
+
+## Branches & Loops
+Instruction|Syntax|Meaning
+-----------|------|-------
+cmp|cmp x0, x1|Sets flags based on x0 - x1 (discards result)
+b|b label|Unconditional branch to label
+b.eq|b.eq label|Branch if equal (Z flag set)
+b.ne|b.ne label|Branch if not equal
+b.lt|b.lt label|Branch if less than (signed)
+b.gt|b.gt label|Branch if greater than (signed)
+b.le|b.le label|Branch if less than or equal
+b.ge|b.ge label|Branch if greater than or equal
+cbz|cbz x0, label|Branch if x0 == 0 (no separate cmp needed)
+cbnz|cbnz x0, label|Branch if x0 != 0
+bl|bl function|Branch with link — call a function (saves PC+4 into lr)
+ret|ret|Return from function (branches to address in lr)
