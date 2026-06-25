@@ -83,3 +83,12 @@ cbz|cbz x0, label|Branch if x0 == 0 (no separate cmp needed)
 cbnz|cbnz x0, label|Branch if x0 != 0
 bl|bl function|Branch with link — call a function (saves PC+4 into lr)
 ret|ret|Return from function (branches to address in lr)
+
+
+## Functions
+- First 8 args go in x0 - x7; Additional args go on the stack
+- Return value in x0 (and x1 for 128-bit results)
+- x0 - x18: caller must save if needed after the `bl` call
+- x19 - x28: fp, lr: caller must save/restore if it uses them
+- sp must be 16-byte aligned before any `bl` call (else bus error)
+- x29 (fp) points to the saved fp/lr pair at the base of your frame
