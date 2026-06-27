@@ -92,3 +92,12 @@ ret|ret|Return from function (branches to address in lr)
 - x19 - x28: fp, lr: caller must save/restore if it uses them
 - sp must be 16-byte aligned before any `bl` call (else bus error)
 - x29 (fp) points to the saved fp/lr pair at the base of your frame
+
+
+## TODOs
+- [] write a printint function to print an integer of arbitrary length
+- [] write a strlen funciton to determine a string's length
+- [] write fizzbuzz 1-70, say
+- [] write a simple sorting algo (like insertion sort)
+
+- https://github.com/Apress/programming-with-64-bit-ARM-assembly-language/tree/master
