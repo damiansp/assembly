@@ -4,12 +4,12 @@
 // extern "C" namespace prevents name mangling by C++ compiler
 extern "C" {
   // external assembly func
-  void asm_func(void);
+  void arm64_func(void);
 };
 
 
 int main() {
-  printf("Calling asm_main:\n");
-  asm_Func();
-  printf("Returned from asm_main\n");
+  printf("Calling arm64_main:\n");
+  arm64_func();
+  printf("Returned from arm64_main\n");
 }
